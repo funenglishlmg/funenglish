@@ -3,454 +3,307 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fun English English Training Centre | Kursus Bahasa Inggris TK–SMA &amp; Umum, Lamongan</title>
+  <title>Fun English English Training Centre | Kursus Bahasa Inggris TK–SMA & Umum, Lamongan</title>
   <meta name="description" content="Kursus bahasa Inggris untuk TK, SD, SMP, SMA dan Umum di Kandangsemangkon (Paciran) dan Kranji, Lamongan. Maks. 12 siswa per kelas, ruangan ber-AC.">
   <meta name="theme-color" content="#00A8CC">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: { colors: { navy: '#1B2A4A', cyan: '#00A8CC', muted: '#5B6478' },
-      fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] } } } }
-  </script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:'#1B2A4A',cyan:'#00A8CC',muted:'#5B6478',orange:'#FF6B2C'},fontFamily:{sans:['Inter','ui-sans-serif','system-ui','sans-serif']},boxShadow:{glow:'0 14px 30px -8px rgba(255,107,44,.55)'}}}}</script>
   <style>
-    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-    details summary { list-style: none; cursor: pointer; }
-    details summary::-webkit-details-marker { display: none; }
-    details[open] .faq-icon { transform: rotate(45deg); }
-    .card-lift { transition: transform .3s ease, box-shadow .3s ease; }
-    .card-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(27,42,74,.22); }
-    .opt-on { background:#00A8CC; color:#fff; border-color:#00A8CC; }
-
-    /* ---- Statistik siswa (animated counter) ---- */
-    .stats-section { text-align: center; padding: 64px 20px; background-color: #ffffff; }
-    .stats-title { color: #1B2A4A; font-size: 2rem; font-weight: 700; margin-bottom: 40px; }
-    .stats-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
-    .stat-item { flex: 1; min-width: 220px; }
-    .stat-number { font-size: 4rem; font-weight: 800; color: #3B82F6; line-height: 1; }
-    .stat-label { color: #374151; font-weight: 600; margin: 12px 0; }
-    .progress-bg { width: 100%; height: 8px; background-color: #e5e7eb; border-radius: 999px; overflow: hidden; }
-    .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #00A8CC, #5ED3EC); border-radius: 999px; transition: width 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
-  </style>
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+details summary{list-style:none;cursor:pointer}
+details summary::-webkit-details-marker{display:none}
+details[open] .faq-icon{transform:rotate(45deg)}
+.glass{background:rgba(255,255,255,.75);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.nav-link{position:relative;padding:6px 0;white-space:nowrap}
+.nav-link::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:#00A8CC;border-radius:2px;transition:width .3s ease}
+.nav-link:hover::after,.nav-link.is-active::after{width:100%}
+.nav-link.is-active{color:#00A8CC}
+.dropdown{opacity:0;visibility:hidden;transform:translateY(8px);transition:all .25s ease}
+#program-menu:hover .dropdown,#program-menu.is-open .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+#program-menu.is-open #program-chevron{transform:rotate(180deg)}
+.msub{display:none}.msub.is-open{display:flex}
+.card-lift{transition:transform .3s ease,box-shadow .3s ease}
+.card-lift:hover{transform:translateY(-6px);box-shadow:0 20px 40px -12px rgba(27,42,74,.22)}
+.blob{border-radius:46% 54% 42% 58%/52% 44% 56% 48%}
+.blob-bg{background:radial-gradient(circle at 30% 30%,#CFF1F9 0%,#E8F8FC 45%,#fff 80%)}
+@keyframes float-y{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.float-card{animation:float-y 5s ease-in-out infinite;transition:box-shadow .3s ease}
+.float-card:hover{box-shadow:0 24px 44px -12px rgba(27,42,74,.35)}
+.float-d1{animation-delay:0s}.float-d2{animation-delay:1.2s}.float-d3{animation-delay:2.4s}
+@keyframes badge-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.badge-new{display:inline-block;animation:badge-pulse 1.6s ease-in-out infinite}
+@keyframes wa-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}100%{box-shadow:0 0 0 22px rgba(34,197,94,0)}}
+.wa-pulse{animation:wa-pulse 1.8s ease-out infinite}
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.12s}.js .reveal.d2{transition-delay:.24s}.js .reveal.d3{transition-delay:.36s}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.07)}}
+.kb{animation:kenburns 16s ease-in-out infinite alternate}
+.sheen{position:relative;overflow:hidden}
+.sheen::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.4) 50%,transparent 60%);transform:translateX(-120%)}
+.sheen:hover::after{transform:translateX(120%);transition:transform .9s ease}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#00A8CC,#5ED3EC);border-radius:999px;transition:width 2s cubic-bezier(.1,.5,.1,1)}
+.opt-on{background:#00A8CC;color:#fff;border-color:#00A8CC}
+.modal-overlay{display:none}.modal-overlay.is-open{display:flex}
+.team-img{transition:transform .6s ease}.team-card:hover .team-img{transform:scale(1.06)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body class="bg-white text-navy font-sans antialiased">
-
-<!-- ================= NAVBAR ================= -->
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300">
-  <div class="max-w-6xl mx-auto px-4 h-16 md:h-[72px] flex items-center justify-between gap-4">
-    <a href="#beranda" class="flex items-center shrink-0" aria-label="Fun English - Beranda">
-      <img src="assets/logo-badge.jpg" alt="Logo Fun English English Training Centre" class="h-11 md:h-12 w-auto object-contain">
+<div class="bg-navy text-slate-200 text-xs md:text-sm">
+  <div class="max-w-6xl mx-auto px-4 h-10 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-5 min-w-0">
+      <span class="hidden md:flex items-center gap-2 truncate">
+        <svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <span class="truncate">Perum De' Paciran Residence Blok D-9, Kandangsemangkon, Paciran, Lamongan</span>
+      </span>
+      <span class="flex items-center gap-2 truncate">
+        <svg class="w-4 h-4 text-cyan shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span class="truncate">Senin – Sabtu, 12.00 – 19.00 WIB</span>
+      </span>
+    </div>
+    <div class="flex items-center gap-2 shrink-0">
+      <a href="https://instagram.com/funenglishlamongan" aria-label="Instagram Fun English" class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-pink-500 hover:text-white transition">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      </a>
+      <a href="https://facebook.com/FunEnglish" aria-label="Facebook Fun English" class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6c0-1 .5-1.5 1.5-1.5H17V1h-2.5C11.8 1 11 2.8 11 5v3H8v3.5h3V23h3V11.5h2.7L17.5 8H14z"/></svg>
+      </a>
+      <a href="https://wa.me/628563127720?text=Halo%20Fun%20English%2C%20saya%20ingin%20info" aria-label="WhatsApp Fun English" class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-500 hover:text-white transition">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+<header id="site-header" class="sticky top-0 z-50 glass border-b border-white/60 transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center shrink-0" aria-label="Fun English - Beranda">
+      <img src="assets/logo-badge.jpg" alt="Logo Fun English English Training Centre" class="h-12 w-auto object-contain">
     </a>
-    <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-navy/80">
-      <a href="#beranda" class="nav-link hover:text-cyan transition">Beranda</a>
-      <a href="#program" class="nav-link hover:text-cyan transition">Program</a>
-      <a href="#mengapa" class="nav-link hover:text-cyan transition">Mengapa Kami</a>
-      <a href="#pengajar" class="nav-link hover:text-cyan transition">Pengajar</a>
-      <a href="#kontak" class="nav-link hover:text-cyan transition">Kontak</a>
+
+    <nav class="hidden xl:flex items-center gap-6 text-[15px] font-semibold text-navy/80" aria-label="Menu utama">
+      <a href="index.html" class="nav-link hover:text-cyan transition is-active">Beranda</a>
+      <div class="relative" id="program-menu">
+        <button type="button" id="program-btn" aria-expanded="false" aria-controls="program-dropdown" class="nav-link hover:text-cyan transition inline-flex items-center gap-1">Program
+          <svg id="program-chevron" class="w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor"><path d="M5.3 7.3a1 1 0 011.4 0L10 10.6l3.3-3.3a1 1 0 111.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4z"/></svg>
+        </button>
+        <div id="program-dropdown" class="dropdown absolute left-1/2 -translate-x-1/2 top-full pt-4 w-72">
+          <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-3">
+            <a href="program-kids.html" class="block rounded-xl px-4 py-3 hover:bg-cyan/10"><span class="block font-bold text-navy">Fun Kids English</span><span class="block text-xs text-muted font-normal">Untuk TK &amp; SD</span></a>
+            <a href="program-teen.html" class="block rounded-xl px-4 py-3 hover:bg-cyan/10"><span class="block font-bold text-navy">Teen &amp; Academic English</span><span class="block text-xs text-muted font-normal">Untuk SMP &amp; SMA</span></a>
+            <a href="program-general.html" class="block rounded-xl px-4 py-3 hover:bg-cyan/10"><span class="block font-bold text-navy">General &amp; Professional</span><span class="block text-xs text-muted font-normal">Untuk Umum &amp; Dunia Kerja</span></a>
+          </div>
+        </div>
+      </div>
+      <a href="tentang-kami.html" class="nav-link hover:text-cyan transition">Tentang Kami</a>
+      <a href="promo.html" class="nav-link hover:text-cyan transition inline-flex items-center gap-2">Promo
+        <span class="badge-new text-[10px] font-extrabold uppercase bg-orange text-white px-2 py-0.5 rounded-full">New!</span>
+      </a>
+      <button type="button" data-open="lokasi" class="nav-link hover:text-cyan transition whitespace-nowrap">Lokasi Tersedia</button>
+      <button type="button" data-open="penawaran" class="nav-link hover:text-cyan transition whitespace-nowrap">Penawaran Menarik</button>
+      <a href="index.html#kontak" class="nav-link hover:text-cyan transition">Hubungi Kami</a>
     </nav>
+
     <div class="flex items-center gap-3">
-      <a href="#kontak" class="hidden sm:inline-flex bg-cyan text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-sm hover:bg-[#0090b0] hover:shadow-md transition">Daftar Sekarang</a>
+      <button type="button" data-open="tanya" class="hidden sm:inline-flex items-center bg-orange text-white font-extrabold text-sm tracking-wide px-6 py-3 rounded-full shadow-glow hover:brightness-110 hover:-translate-y-0.5 transition">TANYA KAMI</button>
       <button id="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-nav"
-        class="lg:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-lg border border-slate-200">
+        class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl border border-slate-200 bg-white">
         <span class="block w-5 h-0.5 bg-navy rounded transition-transform duration-300"></span>
         <span class="block w-5 h-0.5 bg-navy rounded transition-opacity duration-300"></span>
         <span class="block w-5 h-0.5 bg-navy rounded transition-transform duration-300"></span>
       </button>
     </div>
   </div>
-  <!-- Menu mobile: slide-down -->
-  <nav id="mobile-nav" class="lg:hidden overflow-hidden max-h-0 transition-all duration-300 ease-out bg-white border-t border-slate-100 shadow-md">
-    <div class="flex flex-col px-4 py-2 text-[15px] font-medium text-navy">
-      <a href="#beranda" class="mnav py-3 border-b border-slate-100">Beranda</a>
-      <a href="#program" class="mnav py-3 border-b border-slate-100">Program</a>
-      <a href="#mengapa" class="mnav py-3 border-b border-slate-100">Mengapa Kami</a>
-      <a href="#pengajar" class="mnav py-3 border-b border-slate-100">Pengajar</a>
-      <a href="#kontak" class="mnav py-3 mb-2">Kontak</a>
-      <a href="#kontak" class="mnav mb-3 bg-cyan text-white text-center font-semibold py-3 rounded-full">Daftar Sekarang</a>
+
+  <nav id="mobile-nav" class="xl:hidden overflow-hidden max-h-0 transition-all duration-300 ease-out bg-white border-t border-slate-100 shadow-md" aria-label="Menu mobile">
+    <div class="flex flex-col px-4 py-2 text-[15px] font-semibold text-navy">
+      <a href="index.html" class="mnav py-3 border-b border-slate-100">Beranda</a>
+      <button type="button" id="mprogram-btn" aria-expanded="false" class="py-3 border-b border-slate-100 flex items-center justify-between text-left">Program
+        <svg id="mprogram-chevron" class="w-4 h-4 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor"><path d="M5.3 7.3a1 1 0 011.4 0L10 10.6l3.3-3.3a1 1 0 111.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4z"/></svg>
+      </button>
+      <div id="mprogram-sub" class="msub flex-col pl-4 border-b border-slate-100">
+        <a href="program-kids.html" class="mnav py-2.5 text-sm text-muted">Fun Kids English (TK &amp; SD)</a>
+        <a href="program-teen.html" class="mnav py-2.5 text-sm text-muted">Teen &amp; Academic English (SMP &amp; SMA)</a>
+        <a href="program-general.html" class="mnav py-2.5 text-sm text-muted">General &amp; Professional (Umum)</a>
+      </div>
+      <a href="tentang-kami.html" class="mnav py-3 border-b border-slate-100">Tentang Kami</a>
+      <a href="promo.html" class="mnav py-3 border-b border-slate-100 flex items-center gap-2">Promo <span class="text-[10px] font-extrabold uppercase bg-orange text-white px-2 py-0.5 rounded-full">New!</span></a>
+      <button type="button" data-open="lokasi" class="mnav py-3 border-b border-slate-100 text-left">Lokasi Tersedia</button>
+      <button type="button" data-open="penawaran" class="mnav py-3 border-b border-slate-100 text-left">Penawaran Menarik</button>
+      <a href="index.html#kontak" class="mnav py-3 mb-3 border-b border-slate-100">Hubungi Kami</a>
+      <button type="button" data-open="tanya" class="mnav mb-4 bg-orange text-white text-center font-extrabold py-3 rounded-full">TANYA KAMI</button>
     </div>
   </nav>
 </header>
-
 <main>
-<!-- ================= HERO ================= -->
-<section id="beranda" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-b from-[#E8F8FC] via-white to-white">
-  <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-cyan/10 blur-3xl pointer-events-none"></div>
-  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <span class="inline-flex items-center gap-2 bg-cyan/10 text-cyan font-semibold text-sm px-4 py-1.5 rounded-full">✨ Kursus Bahasa Inggris Terbaik untuk TK – SMA dan UMUM</span>
-      <h1 class="mt-6 text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.1] text-navy">
-        Tingkatkan Kepercayaan Diri &amp; Kuasai Bahasa Inggris dengan <span class="text-cyan">Cara yang menyenangkan dan Seru!</span>
+<!-- HERO -->
+<section id="beranda" class="relative overflow-hidden blob-bg pt-16 pb-20 md:pt-24 md:pb-28">
+  <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-cyan/15 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-navy/5 blur-3xl pointer-events-none"></div>
+  <div class="relative max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <p class="inline-flex items-center gap-3 text-cyan font-extrabold text-sm tracking-widest uppercase">
+        <span class="w-8 h-0.5 bg-cyan rounded"></span> Bahasa Inggris Jadi Lebih Mudah?
+      </p>
+      <h1 class="mt-5 text-4xl md:text-5xl lg:text-[60px] font-extrabold leading-[1.08] text-navy">
+        Belajar Bahasa Inggris dengan <span class="text-cyan">Cara yang Seru</span> &amp; Penuh Semangat
       </h1>
-      <p class="mt-6 text-lg text-muted leading-relaxed max-w-xl">Belajar bahasa Inggris dengan metode yang menyenangkan, kelas kecil maksimal 12 siswa, dan pengajar yang sabar membimbing dari pemula hingga mahir.</p>
+      <p class="mt-6 text-lg text-muted leading-relaxed max-w-xl">
+        Kelas kecil maksimal 12 siswa, pengajar yang sabar membimbing dari pemula hingga mahir, dan suasana belajar ber-AC untuk TK, SD, SMP, SMA, dan umum.
+      </p>
       <div class="mt-9 flex flex-wrap gap-4">
-        <a href="#program" class="inline-flex items-center gap-2 bg-cyan text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-cyan/30 hover:bg-[#0090b0] transition">Pilih Program <span aria-hidden="true">→</span></a>
-        <a href="https://wa.me/628563127720?text=Halo%20Fun%20English%2C%20saya%20ingin%20konsultasi" class="inline-flex items-center gap-2 border-2 border-navy/15 text-navy font-semibold px-7 py-3.5 rounded-full hover:border-cyan hover:text-cyan transition">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.568-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          Konsultasi WhatsApp
-        </a>
+        <button type="button" data-open="lokasi" class="inline-flex items-center bg-orange text-white font-extrabold px-8 py-4 rounded-full shadow-glow hover:brightness-110 hover:-translate-y-0.5 transition">LIHAT LOKASI TERSEDIA</button>
+        <button type="button" data-open="penawaran" class="inline-flex items-center bg-navy text-white font-extrabold px-8 py-4 rounded-full shadow-lg shadow-navy/25 hover:bg-[#243a64] hover:-translate-y-0.5 transition">PENAWARAN MENARIK</button>
       </div>
-      <div class="mt-10 grid grid-cols-3 gap-4 max-w-md">
+      <div class="mt-12 grid grid-cols-3 gap-4 max-w-md">
         <div><p class="text-2xl font-extrabold text-navy">Maks. 12</p><p class="text-sm text-muted">siswa per kelas</p></div>
         <div><p class="text-2xl font-extrabold text-navy">2 Cabang</p><p class="text-sm text-muted">di Lamongan</p></div>
         <div><p class="text-2xl font-extrabold text-navy">Ber-AC</p><p class="text-sm text-muted">ruang kelas nyaman</p></div>
       </div>
     </div>
-
-    <!-- Banner flyer -->
-    <div class="relative mx-auto w-full max-w-md md:max-w-none">
-      <div class="rounded-2xl overflow-hidden shadow-2xl shadow-navy/20 ring-1 ring-navy/5 bg-white">
-        <img src="assets/flyer.jpg" alt="Brosur pendaftaran Fun English English Training Centre" class="w-full h-auto block">
+    <div class="relative mx-auto w-full max-w-md lg:max-w-none pb-6 reveal d2">
+      <div class="blob relative mx-auto w-[88%] aspect-square bg-gradient-to-br from-cyan to-navy p-2 shadow-2xl shadow-navy/25">
+        <div class="blob w-full h-full overflow-hidden bg-white">
+          <img src="assets/suasana-1.jpg" alt="Siswa anak-anak belajar bersama di kelas Fun English" class="kb w-full h-full object-cover">
+        </div>
       </div>
-      <div class="absolute -left-3 md:-left-6 top-10 bg-white rounded-xl shadow-xl px-4 py-3 flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full bg-cyan/15 text-cyan flex items-center justify-center text-lg">👥</span>
-        <div><p class="font-extrabold text-navy leading-tight">Maks. 12</p><p class="text-xs text-muted">siswa per kelas</p></div>
+      <div class="float-card float-d1 absolute left-0 md:-left-4 top-6 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 max-w-[210px]">
+        <span class="w-11 h-11 rounded-xl bg-red-100 text-red-500 flex items-center justify-center">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>
+        </span>
+        <div><p class="font-extrabold text-navy leading-tight">Performance</p><p class="text-xs text-muted">Prestasi akademis</p></div>
       </div>
-      <div class="absolute -right-3 md:-right-6 bottom-10 bg-navy text-white rounded-xl shadow-xl px-4 py-3 flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-lg">🕛</span>
-        <div><p class="font-extrabold leading-tight">Senin–Sabtu</p><p class="text-xs text-white/70">12.00 – 19.00 WIB</p></div>
+      <div class="float-card float-d2 absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 max-w-[210px]">
+        <span class="w-11 h-11 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg>
+        </span>
+        <div><p class="font-extrabold text-navy leading-tight">Intelligence</p><p class="text-xs text-muted">Kecerdasan berkomunikasi</p></div>
+      </div>
+      <div class="float-card float-d3 absolute left-6 md:left-10 bottom-0 bg-navy text-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 max-w-[210px]">
+        <span class="w-11 h-11 rounded-xl bg-green-400/20 text-green-300 flex items-center justify-center">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+        </span>
+        <div><p class="font-extrabold leading-tight">Career</p><p class="text-xs text-white/70">Karier yang cemerlang</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= PROGRAM ================= -->
-<section id="program" class="py-20 bg-slate-50/60 border-y border-slate-100">
+<!-- KEUNGGULAN -->
+<section class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center max-w-2xl mx-auto">
-      <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Program Kursus</p>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Pilih Program yang Sesuai Jenjang</h2>
-      <p class="mt-4 text-muted">Bandingkan program di bawah, lalu pilih yang paling cocok untuk Anda atau anak Anda.</p>
-      <p class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy bg-white border border-cyan/30 px-4 py-2 rounded-full shadow-sm">🎓 Peserta: TK, SD, SMP, SMA, dan Umum</p>
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="text-cyan font-extrabold text-sm tracking-widest uppercase">Keunggulan</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Apa yang Akan Didapatkan?</h2>
+      <p class="mt-4 text-muted">Kualitas belajar yang terjangkau, dengan fasilitas modern dan aktivitas yang membuat belajar terasa menyenangkan.</p>
     </div>
-
-    <div class="mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-6">
-      <!-- Card A -->
-      <article class="card-lift bg-white rounded-2xl border border-[#E5E7EB] p-7 flex flex-col lg:col-span-2">
-        <div class="flex items-start justify-between">
-          <span class="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center text-3xl">🧸</span>
-          <span class="text-xs font-semibold bg-cyan/10 text-cyan px-3 py-1 rounded-full">Usia 5–12 Tahun</span>
-        </div>
-        <h3 class="mt-6 text-xl font-bold text-navy">Fun Kids English</h3>
-        <p class="text-sm text-muted">Untuk TK &amp; SD</p>
-        <ul class="mt-5 space-y-3 text-sm text-navy/85 flex-1">
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Metode pembelajaran yang menyenangkan</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Kelas sesuai kemampuan siswa</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Ruangan ber AC</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Buku materi internasional</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Audio &amp; video di setiap kelas</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Latihan presentasi aktif</li>
-        </ul>
-        <div class="mt-7 pt-6 border-t border-slate-100">
-          <p class="text-sm text-muted">Biaya awal</p>
-          <p class="text-2xl font-extrabold text-navy">Rp100.000</p>
-          <a href="#kontak" data-pick="A" class="pick-btn mt-5 block text-center bg-cyan text-white font-semibold py-3 rounded-full hover:bg-[#0090b0] transition">Daftar Program Ini</a>
-        </div>
-      </article>
-
-      <!-- Card B -->
-      <article class="card-lift bg-white rounded-2xl border-2 border-cyan p-7 flex flex-col relative lg:col-span-2">
-        <span class="absolute -top-3 right-6 text-xs font-bold bg-navy text-white px-3 py-1 rounded-full">Paling Diminati</span>
-        <div class="flex items-start justify-between">
-          <span class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center text-3xl">🎓</span>
-          <span class="text-xs font-semibold bg-cyan/10 text-cyan px-3 py-1 rounded-full">Usia 13–18 Tahun</span>
-        </div>
-        <h3 class="mt-6 text-xl font-bold text-navy">Teen &amp; Academic English</h3>
-        <p class="text-sm text-muted">Untuk SMP &amp; SMA</p>
-        <ul class="mt-5 space-y-3 text-sm text-navy/85 flex-1">
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Ruangan ber AC</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Penguatan grammar &amp; speaking</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Persiapan ujian sekolah &amp; akademik</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Kelas sesuai kemampuan siswa</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Bimbingan guru berkala</li>
-        </ul>
-        <div class="mt-7 pt-6 border-t border-slate-100">
-          <p class="text-sm text-muted">Biaya awal</p>
-          <p class="text-2xl font-extrabold text-navy">Rp100.000</p>
-          <a href="#kontak" data-pick="B" class="pick-btn mt-5 block text-center bg-cyan text-white font-semibold py-3 rounded-full hover:bg-[#0090b0] transition">Daftar Program Ini</a>
-        </div>
-      </article>
-
-      <!-- Card C -->
-      <article class="card-lift bg-white rounded-2xl border border-[#E5E7EB] p-7 flex flex-col lg:col-span-2">
-        <div class="flex items-start justify-between">
-          <span class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-3xl">💼</span>
-          <span class="text-xs font-semibold bg-cyan/10 text-cyan px-3 py-1 rounded-full">Dewasa &amp; Mahasiswa</span>
-        </div>
-        <h3 class="mt-6 text-xl font-bold text-navy">General &amp; Professional</h3>
-        <p class="text-sm text-muted">Untuk Umum &amp; Dunia Kerja</p>
-        <ul class="mt-5 space-y-3 text-sm text-navy/85 flex-1">
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Persiapan wawancara kerja</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Program school partnership</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Company training</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Kefasihan berbicara global</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Modul standar profesional</li>
-          <li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Ruangan kelas ber-AC</li>
-        </ul>
-        <div class="mt-7 pt-6 border-t border-slate-100">
-          <p class="text-sm text-muted">Biaya awal</p>
-          <p class="text-2xl font-extrabold text-navy">Rp100.000</p>
-          <a href="#kontak" data-pick="C" class="pick-btn mt-5 block text-center bg-cyan text-white font-semibold py-3 rounded-full hover:bg-[#0090b0] transition">Daftar Program Ini</a>
-        </div>
-      </article>
-      <article class="card-lift bg-white rounded-2xl border border-[#E5E7EB] p-7 flex flex-col lg:col-span-3">
-        <div class="flex items-start justify-between">
-          <span class="w-14 h-14 rounded-2xl bg-cyan/10 flex items-center justify-center text-3xl">🏫</span>
-          <span class="text-xs font-semibold bg-cyan/10 text-cyan px-3 py-1 rounded-full">Untuk Sekolah</span>
-        </div>
-        <h3 class="mt-6 text-xl font-bold text-navy">School Partnership</h3>
-        <p class="text-sm text-muted">Kerja sama dengan sekolah</p>
-        <p class="mt-4 text-sm text-navy/85 leading-relaxed">Program kerja sama dengan sekolah untuk mendukung pembelajaran dan peningkatan kemampuan bahasa Inggris siswa.</p>
-        <ul class="mt-5 space-y-3 text-sm text-navy/85 flex-1"><li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Mendukung pembelajaran di sekolah</li><li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Peningkatan kemampuan bahasa Inggris siswa</li></ul>
-        <div class="mt-7 pt-6 border-t border-slate-100">
-          <p class="text-sm text-muted">Biaya &amp; jadwal</p>
-          <p class="text-base font-bold text-navy">Hubungi kami untuk informasi</p>
-          <a href="https://wa.me/628563127720?text=Saya%20ingin%20info%20program%20School%20Partnership" class="mt-5 block text-center bg-cyan text-white font-semibold py-3 rounded-full hover:bg-[#0090b0] transition">Konsultasi Program Ini</a>
-        </div>
-      </article>
-      <article class="card-lift bg-white rounded-2xl border border-[#E5E7EB] p-7 flex flex-col lg:col-span-3">
-        <div class="flex items-start justify-between">
-          <span class="w-14 h-14 rounded-2xl bg-cyan/10 flex items-center justify-center text-3xl">🏢</span>
-          <span class="text-xs font-semibold bg-cyan/10 text-cyan px-3 py-1 rounded-full">Untuk Perusahaan</span>
-        </div>
-        <h3 class="mt-6 text-xl font-bold text-navy">Company Training</h3>
-        <p class="text-sm text-muted">Pelatihan untuk karyawan</p>
-        <p class="mt-4 text-sm text-navy/85 leading-relaxed">Program pelatihan bahasa Inggris untuk mendukung komunikasi profesional dan kebutuhan kerja di lingkungan perusahaan.</p>
-        <ul class="mt-5 space-y-3 text-sm text-navy/85 flex-1"><li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Mendukung komunikasi profesional</li><li class="flex gap-3"><span class="text-cyan font-bold">✓</span>Disesuaikan dengan kebutuhan kerja perusahaan</li></ul>
-        <div class="mt-7 pt-6 border-t border-slate-100">
-          <p class="text-sm text-muted">Biaya &amp; jadwal</p>
-          <p class="text-base font-bold text-navy">Hubungi kami untuk informasi</p>
-          <a href="https://wa.me/628563127720?text=Saya%20ingin%20info%20program%20Company%20Training" class="mt-5 block text-center bg-cyan text-white font-semibold py-3 rounded-full hover:bg-[#0090b0] transition">Konsultasi Program Ini</a>
-        </div>
-      </article>
-    </div>
-    <p class="mt-10 text-center text-sm text-muted">Rincian biaya lengkap per program bisa ditanyakan langsung ke admin cabang.</p>
-
-    <!-- Jadwal -->
-    <div class="mt-16 grid gap-8 lg:grid-cols-5 items-start">
-      <div class="lg:col-span-2">
-        <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Jadwal</p>
-        <h3 class="mt-3 text-2xl font-extrabold text-navy">Jam Belajar</h3>
-        <p class="mt-3 text-muted">Kelas dibuka setiap Senin sampai Sabtu. Pilih jam yang kosong dengan menghubungi admin cabang sebelum membayar.</p>
+    <div class="mt-14 grid gap-7 md:grid-cols-3">
+      <div class="reveal card-lift rounded-3xl bg-gradient-to-b from-[#E8F8FC] to-white border border-cyan/15 p-8">
+        <span class="w-14 h-14 rounded-2xl bg-cyan text-white flex items-center justify-center text-2xl">💰</span>
+        <h3 class="mt-6 text-xl font-extrabold text-navy">Harga Yang Terjangkau</h3>
+        <p class="mt-3 text-muted text-sm leading-relaxed">Biaya awal mulai Rp100.000 dengan kualitas pengajaran yang tetap terjaga.</p>
       </div>
-      <div class="lg:col-span-3 overflow-x-auto rounded-2xl border border-[#E5E7EB] bg-white">
-        <table class="min-w-full text-sm text-center">
-          <thead class="bg-navy text-white">
-            <tr><th class="px-4 py-3 text-left">Program</th><th class="px-4 py-3">Senin – Jumat</th><th class="px-4 py-3">Sabtu</th><th class="px-4 py-3">Minggu</th></tr>
-          </thead>
-          <tbody>
-            <tr class="border-t"><td class="px-4 py-3 text-left font-semibold">Fun Kids English</td><td class="px-4 py-3">12.00 – 19.00</td><td class="px-4 py-3">12.00 – 19.00</td><td class="px-4 py-3 text-slate-400">Libur</td></tr>
-            <tr class="border-t bg-slate-50"><td class="px-4 py-3 text-left font-semibold">Teen &amp; Academic</td><td class="px-4 py-3">12.00 – 19.00</td><td class="px-4 py-3">12.00 – 19.00</td><td class="px-4 py-3 text-slate-400">Libur</td></tr>
-            <tr class="border-t"><td class="px-4 py-3 text-left font-semibold">General &amp; Professional</td><td class="px-4 py-3">12.00 – 19.00</td><td class="px-4 py-3">12.00 – 19.00</td><td class="px-4 py-3 text-slate-400">Libur</td></tr>
-          </tbody>
-        </table>
+      <div class="reveal d1 card-lift rounded-3xl bg-gradient-to-b from-[#EEF2FF] to-white border border-navy/10 p-8">
+        <span class="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center text-2xl">🏫</span>
+        <h3 class="mt-6 text-xl font-extrabold text-navy">Fasilitas Belajar Modern</h3>
+        <p class="mt-3 text-muted text-sm leading-relaxed">Ruang kelas ber-AC, buku materi internasional, serta audio dan video di setiap kelas.</p>
+      </div>
+      <div class="reveal d2 card-lift rounded-3xl bg-gradient-to-b from-[#FFF3EC] to-white border border-orange/20 p-8">
+        <span class="w-14 h-14 rounded-2xl bg-orange text-white flex items-center justify-center text-2xl">🎉</span>
+        <h3 class="mt-6 text-xl font-extrabold text-navy">Aktivitas Belajar Seru</h3>
+        <p class="mt-3 text-muted text-sm leading-relaxed">Latihan presentasi dan kegiatan aktif di kelas agar siswa tidak cepat bosan.</p>
       </div>
     </div>
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="reveal rounded-2xl bg-slate-50 border border-slate-100 p-6 text-center"><p class="text-3xl font-extrabold text-cyan">Maks. 12</p><p class="text-sm text-muted mt-1">siswa per kelas</p></div>
+      <div class="reveal d1 rounded-2xl bg-slate-50 border border-slate-100 p-6 text-center"><p class="text-3xl font-extrabold text-cyan">3 Program</p><p class="text-sm text-muted mt-1">TK sampai Umum</p></div>
+      <div class="reveal d2 rounded-2xl bg-slate-50 border border-slate-100 p-6 text-center"><p class="text-3xl font-extrabold text-cyan">2 Cabang</p><p class="text-sm text-muted mt-1">Kandangsemangkon &amp; Kranji</p></div>
+      <div class="reveal d3 rounded-2xl bg-slate-50 border border-slate-100 p-6 text-center"><p class="text-3xl font-extrabold text-cyan">6 Hari</p><p class="text-sm text-muted mt-1">Senin – Sabtu</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Tes level -->
-    <div id="placement" class="mt-16 bg-white rounded-3xl border border-[#E5E7EB] p-8 md:p-10 shadow-sm">
-      <div class="grid gap-8 md:grid-cols-5 items-start">
-        <div class="md:col-span-2">
-          <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Placement Test Gratis</p>
-          <h3 class="mt-3 text-2xl font-extrabold text-navy">Belum tahu level yang cocok?</h3>
-          <p class="mt-3 text-muted">Jawab 5 pertanyaan singkat untuk mengetahui perkiraan level bahasa Inggris Anda atau anak Anda.</p>
-        </div>
-        <div id="quiz" class="md:col-span-3 rounded-2xl bg-slate-50 border border-slate-100 p-6">
-          <p class="text-xs font-bold text-cyan" id="q-progress"></p>
-          <p class="mt-2 text-lg font-bold text-navy" id="q-text"></p>
-          <div class="mt-5 space-y-3" id="q-options"></div>
-          <div id="q-result" class="hidden mt-6 rounded-xl bg-white border border-cyan/30 p-5">
-            <p class="font-bold text-cyan" id="r-level"></p>
-            <p class="mt-2 text-sm text-muted" id="r-desc"></p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <a id="r-wa" href="#" class="bg-green-500 text-white font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-green-600">Konsultasi hasil via WhatsApp</a>
-              <button id="r-restart" type="button" class="text-sm font-semibold text-navy underline px-2">Ulangi tes</button>
-            </div>
-          </div>
-        </div>
+<!-- VIDEO BERANDA -->
+<section class="py-20 bg-slate-50/70 border-y border-slate-100">
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-5 gap-12 items-center">
+    <div class="lg:col-span-2 reveal">
+      <p class="text-cyan font-extrabold text-sm tracking-widest uppercase">Suasana Belajar</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Lihat Langsung Keseruan di Fun English</h2>
+      <p class="mt-5 text-muted leading-relaxed">Sekilas kegiatan belajar di kelas kami: siswa aktif berinteraksi, pengajar yang sabar membimbing, dan suasana yang membuat setiap siswa berani mencoba berbicara.</p>
+      <a href="tentang-kami.html#galeri" class="mt-7 inline-flex items-center gap-2 text-cyan font-bold hover:underline">Lihat semua kegiatan <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="lg:col-span-3 reveal d2">
+      <div class="rounded-3xl overflow-hidden shadow-2xl shadow-navy/20 bg-navy">
+        <video controls playsinline preload="none" poster="assets/video-beranda.jpg" class="w-full h-auto block" aria-label="Video suasana belajar di Fun English">
+          <source src="assets/video-beranda.mp4" type="video/mp4">
+          Browser Anda tidak mendukung pemutaran video.
+        </video>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= COMPANY TRAINING ================= -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center max-w-2xl mx-auto">
-      <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Company Training</p>
-      <h2 class="mt-3 text-2xl md:text-3xl font-extrabold text-navy">Pelatihan Bahasa Inggris untuk Perusahaan</h2>
-    </div>
-    <div class="mt-10 grid md:grid-cols-2 gap-5">
-      <img src="assets/company-1.jpg" alt="Peserta Company Training Fun English sedang mengikuti sesi pelatihan" loading="lazy" class="rounded-2xl w-full h-64 md:h-72 object-cover">
-      <img src="assets/company-2.jpg" alt="Sesi Company Training Fun English bersama peserta" loading="lazy" class="rounded-2xl w-full h-64 md:h-72 object-cover">
-    </div>
-  </div>
-</section>
-
-<!-- ================= STATISTIK SISWA ================= -->
-<section class="stats-section">
-  <h2 class="stats-title">Currently Enrolled Students</h2>
-  <div class="stats-grid">
-    <div class="stat-item">
-      <div class="stat-number" data-target="47">0</div>
-      <p class="stat-label">English for Kids Students</p>
-      <div class="progress-bg"><div class="progress-fill" data-progress="29%"></div></div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" data-target="76">0</div>
-      <p class="stat-label">English for Teens Students</p>
-      <div class="progress-bg"><div class="progress-fill" data-progress="47%"></div></div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" data-target="39">0</div>
-      <p class="stat-label">English for Adults Students</p>
-      <div class="progress-bg"><div class="progress-fill" data-progress="24%"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= MENGAPA KAMI ================= -->
-<section id="mengapa" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center max-w-2xl mx-auto">
-      <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Mengapa Kami</p>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Belajar Efektif, Suasana Menyenangkan</h2>
-    </div>
-    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="card-lift rounded-2xl border border-[#E5E7EB] p-6 bg-white"><span class="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center text-2xl">🧑‍🏫</span><p class="mt-5 font-bold text-navy">Guru pembimbing profesional</p><p class="mt-2 text-sm text-muted">Pengajar sabar dan berpengalaman, ramah membimbing siswa.</p></div>
-      <div class="card-lift rounded-2xl border border-[#E5E7EB] p-6 bg-white"><span class="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center text-2xl">🎯</span><p class="mt-5 font-bold text-navy">Placement test</p><p class="mt-2 text-sm text-muted">Setiap siswa dipilihkan kelas sesuai kemampuannya.</p></div>
-      <div class="card-lift rounded-2xl border border-[#E5E7EB] p-6 bg-white"><span class="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center text-2xl">👥</span><p class="mt-5 font-bold text-navy">Kelas kecil, maks. 12 siswa</p><p class="mt-2 text-sm text-muted">Setiap murid mendapat perhatian dan kesempatan berbicara.</p></div>
-      <div class="card-lift rounded-2xl border border-[#E5E7EB] p-6 bg-white"><span class="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center text-2xl">📘</span><p class="mt-5 font-bold text-navy">Buku materi internasional</p><p class="mt-2 text-sm text-muted">Materi standar global untuk hasil yang terukur.</p></div>
-      <div class="card-lift rounded-2xl border border-[#E5E7EB] p-6 bg-white"><span class="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center text-2xl">🎬</span><p class="mt-5 font-bold text-navy">Video &amp; audio di setiap kelas</p><p class="mt-2 text-sm text-muted">Belajar lebih hidup dengan media audio-visual.</p></div>
-      <div class="card-lift rounded-2xl border border-[#E5E7EB] p-6 bg-white"><span class="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center text-2xl">🎤</span><p class="mt-5 font-bold text-navy">Melatih presentasi</p><p class="mt-2 text-sm text-muted">Siswa terbiasa tampil dan berbicara dengan percaya diri.</p></div>
-    </div>
-
-    <!-- Suasana belajar -->
-    <div class="mt-16">
-      <div class="text-center">
-        <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Suasana Belajar</p>
-        <h3 class="mt-3 text-2xl md:text-3xl font-extrabold text-navy">Lihat Langsung Kegiatan Kami</h3>
+<!-- STATISTIK SISWA -->
+<section class="stats-section py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <p class="text-cyan font-extrabold text-sm tracking-widest uppercase reveal">Komunitas Kami</p>
+    <h2 class="mt-3 text-3xl font-extrabold text-navy reveal">Currently Enrolled Students</h2>
+    <div class="mt-14 grid gap-12 md:grid-cols-3">
+      <div class="reveal">
+        <div class="stat-number text-6xl font-extrabold text-cyan leading-none" data-target="47">0</div>
+        <p class="mt-3 font-bold text-navy">English for Kids Students</p>
+        <div class="mt-4 h-2 w-full bg-slate-200 rounded-full overflow-hidden"><div class="progress-fill" data-progress="29%"></div></div>
       </div>
-      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="assets/suasana-1.jpg" alt="Siswa anak-anak belajar bersama di kelas Fun English" loading="lazy" class="rounded-2xl w-full h-40 md:h-52 object-cover">
-        <img src="assets/suasana-2.jpg" alt="Kelas Fun English bersama siswa remaja" loading="lazy" class="rounded-2xl w-full h-40 md:h-52 object-cover">
-        <img src="assets/suasana-5.jpg" alt="Mr. Fain bersama siswa-siswa Fun English saat kegiatan belajar" loading="lazy" class="rounded-2xl w-full h-40 md:h-52 object-cover">
-        <img src="assets/suasana-6.jpg" alt="Siswa Fun English belajar di ruang kelas" loading="lazy" class="rounded-2xl w-full h-40 md:h-52 object-cover">
+      <div class="reveal d1">
+        <div class="stat-number text-6xl font-extrabold text-cyan leading-none" data-target="76">0</div>
+        <p class="mt-3 font-bold text-navy">English for Teens Students</p>
+        <div class="mt-4 h-2 w-full bg-slate-200 rounded-full overflow-hidden"><div class="progress-fill" data-progress="47%"></div></div>
+      </div>
+      <div class="reveal d2">
+        <div class="stat-number text-6xl font-extrabold text-cyan leading-none" data-target="39">0</div>
+        <p class="mt-3 font-bold text-navy">English for Adults Students</p>
+        <div class="mt-4 h-2 w-full bg-slate-200 rounded-full overflow-hidden"><div class="progress-fill" data-progress="24%"></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= VIDEO KEGIATAN ================= -->
-<section class="py-20 bg-white border-t border-slate-100">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center max-w-2xl mx-auto">
-      <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Video Kegiatan</p>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Lihat Suasana Belajar Kami</h2>
-      <p class="mt-4 text-muted">Video asli dari kegiatan belajar Fun English. Tekan tombol putar untuk menonton.</p>
-    </div>
-    <div class="mt-12 grid gap-7 md:grid-cols-2">
-        <figure class="bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
-          <video controls playsinline preload="none" poster="assets/video-kegiatan-2.jpg" class="w-full h-auto bg-navy" aria-label="Video kegiatan belajar antara pengajar dan siswa">
-            <source src="assets/video-kegiatan-2.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutaran video.
-          </video>
-          <figcaption class="px-5 py-4 text-sm font-semibold text-navy">Belajar bersama pengajar</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
-          <video controls playsinline preload="none" poster="assets/video-kegiatan-3.jpg" class="w-full h-auto bg-navy" aria-label="Video suasana belajar siswa anak-anak">
-            <source src="assets/video-kegiatan-3.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutaran video.
-          </video>
-          <figcaption class="px-5 py-4 text-sm font-semibold text-navy">Suasana kelas anak-anak</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
-          <video controls playsinline preload="none" poster="assets/video-kegiatan-1.jpg" class="w-full h-auto bg-navy" aria-label="Video siswa remaja berlatih menulis dan belajar">
-            <source src="assets/video-kegiatan-1.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutaran video.
-          </video>
-          <figcaption class="px-5 py-4 text-sm font-semibold text-navy">Latihan bersama siswa remaja</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
-          <video controls playsinline preload="none" poster="assets/video-kegiatan-4.jpg" class="w-full h-auto bg-navy" aria-label="Video kegiatan belajar kelompok">
-            <source src="assets/video-kegiatan-4.mp4" type="video/mp4">
-            Browser Anda tidak mendukung pemutaran video.
-          </video>
-          <figcaption class="px-5 py-4 text-sm font-semibold text-navy">Kegiatan belajar kelompok</figcaption>
-        </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PENGAJAR ================= -->
-<section id="pengajar" class="py-20 bg-slate-50/60 border-t border-slate-100">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center max-w-2xl mx-auto">
-      <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Tim Pengajar</p>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Dibimbing oleh Pengajar yang Ramah &amp; Sabar</h2>
-      <p class="mt-4 text-muted">Dari pemula hingga mahir, setiap siswa mendapat bimbingan yang sesuai dengan kebutuhannya.</p>
-    </div>
-    <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-5">
-      <div class="card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
-        <img src="assets/pengajar-etik.jpg" alt="Ms. Etik, pengajar Fun English" loading="lazy" class="w-full h-72 object-cover object-top">
-        <div class="p-6"><p class="font-bold text-navy text-lg">Ms. Etik</p><p class="text-xs font-semibold text-cyan mt-1">Kids Expert</p></div>
-      </div>
-      <div class="card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
-        <img src="assets/pengajar-hesti.jpg" alt="Ms. Hesti, pengajar Fun English" loading="lazy" class="w-full h-72 object-cover object-top">
-        <div class="p-6"><p class="font-bold text-navy text-lg">Ms. Hesti</p><p class="text-xs font-semibold text-cyan mt-1">Conversational Coach</p></div>
-      </div>
-      <div class="card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
-        <img src="assets/pengajar-nely.jpg" alt="Ms. Nely, pengajar Fun English" loading="lazy" class="w-full h-72 object-cover object-top">
-        <div class="p-6"><p class="font-bold text-navy text-lg">Ms. Nely</p><p class="text-xs font-semibold text-cyan mt-1">Grammar Master</p></div>
-      </div>
-      <div class="card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
-        <img src="assets/pengajar-vika.jpg" alt="Ms. Vika, pengajar Fun English" loading="lazy" class="w-full h-72 object-cover object-top">
-        <div class="p-6"><p class="font-bold text-navy text-lg">Ms. Vika</p><p class="text-xs font-semibold text-cyan mt-1">Pengajar Fun English</p></div>
-      </div>
-      <div class="card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
-        <img src="assets/pengajar-fain.jpg" alt="Mr. Fain, pengajar Fun English" loading="lazy" class="w-full h-72 object-cover object-top">
-        <div class="p-6"><p class="font-bold text-navy text-lg">Mr. Fain</p><p class="text-xs font-semibold text-cyan mt-1">Pengajar Fun English</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section id="faq" class="py-20 bg-white">
+<!-- FAQ -->
+<section id="faq" class="py-20 bg-slate-50/70">
   <div class="max-w-3xl mx-auto px-4">
-    <div class="text-center">
-      <p class="text-cyan font-semibold text-sm tracking-widest uppercase">FAQ</p>
+    <div class="text-center reveal">
+      <p class="text-cyan font-extrabold text-sm tracking-widest uppercase">FAQ</p>
       <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Pertanyaan yang Sering Ditanyakan</h2>
     </div>
     <div class="mt-10 space-y-3">
-      <details class="rounded-xl border border-[#E5E7EB] p-5"><summary class="flex justify-between items-center font-semibold text-navy">Usia berapa yang bisa ikut kursus?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Kami menerima siswa TK, SD, SMP, SMA, dan umum (dewasa).</p></details>
-      <details class="rounded-xl border border-[#E5E7EB] p-5"><summary class="flex justify-between items-center font-semibold text-navy">Bagaimana cara menentukan kelas yang tepat?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Siswa dipilihkan kelas sesuai kemampuan. Anda bisa mencoba Placement Test gratis di halaman Program, lalu tim kami membantu memastikan level saat konsultasi awal.</p></details>
-      <details class="rounded-xl border border-[#E5E7EB] p-5"><summary class="flex justify-between items-center font-semibold text-navy">Berapa biaya pendaftarannya?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Biaya awal mulai Rp100.000. Rincian biaya tiap program bisa Anda tanyakan langsung ke admin cabang.</p></details>
-      <details class="rounded-xl border border-[#E5E7EB] p-5"><summary class="flex justify-between items-center font-semibold text-navy">Berapa jumlah siswa dalam satu kelas?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Maksimal 12 siswa per kelas agar suasana belajar tetap kondusif.</p></details>
-      <details class="rounded-xl border border-[#E5E7EB] p-5"><summary class="flex justify-between items-center font-semibold text-navy">Ada berapa cabang Fun English?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Ada dua cabang: Kandangsemangkon (Paciran) dan Kranji. Pilih yang paling dekat dengan rumah Anda.</p></details>
-      <details class="rounded-xl border border-[#E5E7EB] p-5"><summary class="flex justify-between items-center font-semibold text-navy">Bagaimana cara mendaftar?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Pilih program dan cabang di bagian Kontak, isi data singkat, lalu kirim ke WhatsApp. Admin akan mengonfirmasi jadwal dan pembayaran.</p></details>
+      <details class="reveal rounded-2xl border border-[#E5E7EB] p-5 bg-white hover:shadow-md transition"><summary class="flex justify-between items-center gap-4 font-semibold text-navy">Usia berapa yang bisa ikut kursus?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Kami menerima siswa TK, SD, SMP, SMA, dan umum (dewasa).</p></details>
+      <details class="reveal rounded-2xl border border-[#E5E7EB] p-5 bg-white hover:shadow-md transition"><summary class="flex justify-between items-center gap-4 font-semibold text-navy">Bagaimana cara menentukan kelas yang tepat?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Siswa dipilihkan kelas sesuai kemampuan. Anda bisa mengikuti Placement Test gratis di halaman <a href="promo.html" class="text-cyan font-semibold underline">Promo</a>, lalu tim kami membantu memastikan level saat konsultasi awal.</p></details>
+      <details class="reveal rounded-2xl border border-[#E5E7EB] p-5 bg-white hover:shadow-md transition"><summary class="flex justify-between items-center gap-4 font-semibold text-navy">Berapa biaya pendaftarannya?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Biaya awal mulai Rp100.000. Rincian biaya tiap program bisa Anda tanyakan langsung ke admin cabang.</p></details>
+      <details class="reveal rounded-2xl border border-[#E5E7EB] p-5 bg-white hover:shadow-md transition"><summary class="flex justify-between items-center gap-4 font-semibold text-navy">Berapa jumlah siswa dalam satu kelas?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Maksimal 12 siswa per kelas agar suasana belajar tetap kondusif.</p></details>
+      <details class="reveal rounded-2xl border border-[#E5E7EB] p-5 bg-white hover:shadow-md transition"><summary class="flex justify-between items-center gap-4 font-semibold text-navy">Ada berapa cabang Fun English?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Ada dua cabang: Kandangsemangkon (Paciran) dan Kranji. Pilih yang paling dekat dengan rumah Anda.</p></details>
+      <details class="reveal rounded-2xl border border-[#E5E7EB] p-5 bg-white hover:shadow-md transition"><summary class="flex justify-between items-center gap-4 font-semibold text-navy">Bagaimana cara mendaftar?<span class="faq-icon text-2xl text-cyan transition-transform">+</span></summary><p class="mt-3 text-sm text-muted">Pilih program di halaman Program, lalu isi formulir di bagian Hubungi Kami. Pesan dikirim ke WhatsApp dan admin akan mengonfirmasi jadwal serta pembayaran.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ================= KONTAK & DAFTAR ================= -->
-<section id="kontak" class="py-20 bg-slate-50/60 border-t border-slate-100">
+<!-- HUBUNGI KAMI / DAFTAR -->
+<section id="kontak" class="py-20 bg-white border-t border-slate-100">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center max-w-2xl mx-auto">
-      <p class="text-cyan font-semibold text-sm tracking-widest uppercase">Kontak &amp; Pendaftaran</p>
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="text-cyan font-extrabold text-sm tracking-widest uppercase">Hubungi Kami</p>
       <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Daftar Sekarang</h2>
       <p class="mt-4 text-muted">Isi data singkat di bawah, lalu kirim langsung ke WhatsApp cabang pilihan Anda.</p>
     </div>
-
     <div class="mt-12 grid gap-8 lg:grid-cols-2">
-      <form id="reg-form" class="bg-white rounded-2xl shadow-sm border border-[#E5E7EB] p-7 space-y-5" onsubmit="return false;">
+      <form id="reg-form" class="reveal bg-white rounded-3xl shadow-sm border border-[#E5E7EB] p-7 space-y-5" onsubmit="return false;">
         <div>
           <p class="text-sm font-semibold text-navy mb-2">1. Pilih program</p>
           <select id="f-paket" class="w-full rounded-xl border-slate-300 px-4 py-3 text-sm focus:ring-2 focus:ring-cyan">
             <option>Fun Kids English (TK &amp; SD)</option>
             <option>Teen &amp; Academic English (SMP &amp; SMA)</option>
             <option>General &amp; Professional (Umum)</option>
-            <option>School Partnership (Sekolah)</option>
-            <option>Company Training (Perusahaan)</option>
           </select>
         </div>
         <div>
@@ -477,10 +330,8 @@
         <button id="f-submit" type="button" class="w-full bg-green-500 text-white font-bold py-3.5 rounded-full hover:bg-green-600 transition">Kirim Pendaftaran ke WhatsApp</button>
         <p class="text-xs text-muted text-center">Anda akan diarahkan ke WhatsApp admin cabang yang dipilih. Pendaftaran dikonfirmasi oleh admin.</p>
       </form>
-
       <div class="space-y-6">
-        <!-- Cabang Kandangsemangkon -->
-        <div class="bg-white rounded-2xl shadow-sm border border-[#E5E7EB] overflow-hidden">
+        <div class="reveal d1 bg-white rounded-3xl shadow-sm border border-[#E5E7EB] overflow-hidden">
           <img src="assets/cabang-kandang.jpg" alt="Gedung cabang Kandangsemangkon Fun English" loading="lazy" class="w-full h-44 object-cover">
           <div class="p-6">
             <h3 class="font-bold text-navy text-lg">Cabang Kandangsemangkon <span class="text-xs font-semibold bg-cyan/10 text-cyan px-2 py-0.5 rounded-full align-middle">Pusat</span></h3>
@@ -490,14 +341,11 @@
               <a href="https://wa.me/628563127720" class="border border-green-500 text-green-700 text-sm font-semibold px-4 py-2 rounded-full hover:bg-green-50">WA 0856-3127-720</a>
             </div>
             <div class="mt-5 rounded-xl overflow-hidden border border-slate-200">
-              <iframe title="Peta Cabang Kandangsemangkon" class="w-full h-52" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Perum+De%27+Paciran+Residence+Blok+D-9+Kandangsemangkon+Paciran+Lamongan&output=embed"></iframe>
+              <iframe title="Peta Cabang Kandangsemangkon" class="w-full h-52" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Perum+De%27+Paciran+Residence+Blok+D-9+Kandangsemangkon+Paciran+Lamongan&output=embed"></iframe>
             </div>
           </div>
         </div>
-
-        <!-- Cabang Kranji -->
-        <div class="bg-white rounded-2xl shadow-sm border border-[#E5E7EB] overflow-hidden">
+        <div class="reveal d2 bg-white rounded-3xl shadow-sm border border-[#E5E7EB] overflow-hidden">
           <img src="assets/cabang-kranji.jpg" alt="Gedung cabang Kranji Fun English" loading="lazy" class="w-full h-44 object-cover">
           <div class="p-6">
             <h3 class="font-bold text-navy text-lg">Cabang Kranji</h3>
@@ -507,8 +355,7 @@
               <a href="https://wa.me/628563127720" class="border border-green-500 text-green-700 text-sm font-semibold px-4 py-2 rounded-full hover:bg-green-50">WA 0856-3127-720</a>
             </div>
             <div class="mt-5 rounded-xl overflow-hidden border border-slate-200">
-              <iframe title="Peta Cabang Kranji" class="w-full h-52" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=SMK+Muhammadiyah+9+Kranji+Paciran+Lamongan&output=embed"></iframe>
+              <iframe title="Peta Cabang Kranji" class="w-full h-52" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=SMK+Muhammadiyah+9+Kranji+Paciran+Lamongan&output=embed"></iframe>
             </div>
           </div>
         </div>
@@ -517,17 +364,16 @@
   </div>
 </section>
 
-<!-- ================= PRE-FOOTER CTA ================= -->
+<!-- CTA PENUTUP -->
 <section class="relative overflow-hidden bg-gradient-to-r from-cyan via-[#0A6E96] to-navy text-white py-16">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <h2 class="text-2xl md:text-4xl font-extrabold leading-tight">Siap Meningkatkan Kemampuan Bahasa Inggris Anak Anda?</h2>
-    <p class="mt-4 text-white/80">Konsultasikan kebutuhan belajar Anda dan dapatkan rekomendasi kelas yang tepat.</p>
-    <a href="https://wa.me/628563127720?text=Halo%20Fun%20English%2C%20saya%20ingin%20konsultasi" class="mt-8 inline-flex items-center gap-2 bg-white text-navy font-bold px-8 py-4 rounded-full shadow-xl hover:bg-slate-100 transition">Hubungi Kami via WhatsApp</a>
+  <div class="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+  <div class="relative max-w-4xl mx-auto px-4 text-center reveal">
+    <h2 class="text-2xl md:text-4xl font-extrabold leading-tight">Yuk, cari tahu serunya belajar di Fun English!</h2>
+    <p class="mt-4 text-white/85">Konsultasikan kebutuhan belajar Anda dan dapatkan rekomendasi kelas yang tepat.</p>
+    <button type="button" data-open="tanya" class="mt-8 inline-flex items-center bg-orange text-white font-extrabold px-8 py-4 rounded-full shadow-glow hover:brightness-110 hover:-translate-y-0.5 transition">TANYA KAMI</button>
   </div>
 </section>
 </main>
-
-<!-- ================= FOOTER ================= -->
 <footer class="bg-navy text-slate-300 text-sm pt-16 pb-6">
   <div class="max-w-6xl mx-auto px-4 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
     <div>
@@ -537,11 +383,13 @@
     <div>
       <p class="font-bold text-white mb-4">Navigasi</p>
       <ul class="space-y-2">
-        <li><a href="#beranda" class="hover:text-cyan transition">Beranda</a></li>
-        <li><a href="#program" class="hover:text-cyan transition">Program</a></li>
-        <li><a href="#mengapa" class="hover:text-cyan transition">Mengapa Kami</a></li>
-        <li><a href="#pengajar" class="hover:text-cyan transition">Pengajar</a></li>
-        <li><a href="#kontak" class="hover:text-cyan transition">Kontak</a></li>
+        <li><a href="index.html" class="hover:text-cyan transition">Beranda</a></li>
+        <li><a href="program-kids.html" class="hover:text-cyan transition">Fun Kids English</a></li>
+        <li><a href="program-teen.html" class="hover:text-cyan transition">Teen &amp; Academic English</a></li>
+        <li><a href="program-general.html" class="hover:text-cyan transition">General &amp; Professional</a></li>
+        <li><a href="tentang-kami.html" class="hover:text-cyan transition">Tentang Kami</a></li>
+        <li><a href="promo.html" class="hover:text-cyan transition">Promo</a></li>
+        <li><a href="index.html#kontak" class="hover:text-cyan transition">Hubungi Kami</a></li>
       </ul>
     </div>
     <div>
@@ -556,10 +404,10 @@
     <div>
       <p class="font-bold text-white mb-4">Media Sosial</p>
       <div class="flex gap-3">
-        <a href="https://instagram.com/funenglishlamongan" aria-label="Instagram Fun English" class="w-11 h-11 rounded-full bg-white/10 hover:bg-cyan flex items-center justify-center transition">
+        <a href="https://instagram.com/funenglishlamongan" aria-label="Instagram Fun English" class="w-11 h-11 rounded-full bg-white/10 hover:bg-cyan hover:text-white flex items-center justify-center transition">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
         </a>
-        <a href="https://facebook.com/FunEnglish" aria-label="Facebook Fun English" class="w-11 h-11 rounded-full bg-white/10 hover:bg-cyan flex items-center justify-center transition">
+        <a href="https://facebook.com/FunEnglish" aria-label="Facebook Fun English" class="w-11 h-11 rounded-full bg-white/10 hover:bg-cyan hover:text-white flex items-center justify-center transition">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6c0-1 .5-1.5 1.5-1.5H17V1h-2.5C11.8 1 11 2.8 11 5v3H8v3.5h3V23h3V11.5h2.7L17.5 8H14z"/></svg>
         </a>
       </div>
@@ -572,17 +420,46 @@
   </div>
 </footer>
 
-<!-- WhatsApp floating (pulse) -->
-<a href="https://wa.me/628563127720?text=Halo%20Fun%20English%2C%20saya%20ingin%20tanya" aria-label="Chat WhatsApp"
-   class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-green-500 text-white shadow-xl flex items-center justify-center hover:bg-green-600 transition">
-  <span class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-40"></span>
-  <svg class="relative w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+<a href="https://wa.me/628563127720?text=Halo%20Fun%20English%2C%20saya%20ingin%20tanya" aria-label="Chat with Us via WhatsApp"
+   class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 bg-green-500 text-white font-bold text-sm pl-4 pr-5 py-3.5 rounded-full shadow-xl hover:bg-green-600 transition">
+  <span class="wa-pulse absolute inset-0 rounded-full pointer-events-none"></span>
+  <svg class="relative w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+  <span class="relative">Chat with Us</span>
 </a>
-
+<!-- MODAL FITUR -->
+<div id="modal" class="modal-overlay fixed inset-0 z-[60] bg-navy/60 backdrop-blur-sm items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl">
+    <div class="sticky top-0 z-10 bg-white/95 backdrop-blur border-b border-slate-100 px-6 py-4 flex items-center justify-between gap-4">
+      <h3 id="modal-title" class="text-xl font-extrabold text-navy"></h3>
+      <button type="button" data-close aria-label="Tutup" class="w-10 h-10 shrink-0 rounded-full bg-slate-100 hover:bg-slate-200 text-navy text-2xl leading-none">&times;</button>
+    </div>
+    <div id="modal-body" class="p-6"></div>
+  </div>
+</div>
 <script>
-// ---------- Navbar: shadow saat scroll + menu mobile slide-down ----------
+
+const WA_NUM = '628563127720';
+const INP = 'w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-cyan';
+const BRANCHES = {
+  kandang: { nama: 'Kandangsemangkon', alamat: "Perum De' Paciran Residence Blok D-9 (depan balai desa Kandangsemangkon), Kec. Paciran, Kab. Lamongan 62263", wa: '6285700980098', waTxt: '0857-0098-0098', map: "Perum De' Paciran Residence Blok D-9 Kandangsemangkon Paciran Lamongan", img: 'assets/cabang-kandang.jpg' },
+  kranji: { nama: 'Kranji', alamat: 'Gang Masjid Kranji masuk ke selatan (depan SMK Muhammadiyah 9), Kab. Lamongan', wa: '6285607152724', waTxt: '0856-0715-2724', map: 'SMK Muhammadiyah 9 Kranji Paciran Lamongan', img: 'assets/cabang-kranji.jpg' }
+};
+const PROGRAM_KEYS = ['kids', 'teen', 'general'];
+const CHIP_MSG = {
+  'Biaya': 'Berapa biaya kursus di Fun English?',
+  'Jadwal': 'Bagaimana jadwal kelas yang tersedia?',
+  'Lokasi': 'Di mana lokasi cabang Fun English?',
+  'Placement test': 'Saya ingin ikut placement test gratis.',
+  'Company Training': 'Saya ingin info Company Training.'
+};
+const waUrl = (num, text) => `https://wa.me/${num}?text=${encodeURIComponent(text)}`;
+const mapsUrl = q => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+
+document.documentElement.classList.add('js');
+
+// ---------- Header & menu mobile ----------
 const header = document.getElementById('site-header');
-const onScroll = () => { const s = window.scrollY > 10; header.classList.toggle('shadow-md', s); header.classList.toggle('bg-white/90', s); header.classList.toggle('backdrop-blur-md', s); };
+const onScroll = () => header.classList.toggle('shadow-lg', window.scrollY > 10);
 window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
 const menuBtn = document.getElementById('menu-btn');
@@ -597,28 +474,163 @@ function setMenu(open) {
 }
 menuBtn.addEventListener('click', () => setMenu(mobileNav.style.maxHeight === '0px' || !mobileNav.style.maxHeight));
 document.querySelectorAll('.mnav').forEach(a => a.addEventListener('click', () => setMenu(false)));
-window.addEventListener('resize', () => { if (window.innerWidth >= 1024) { setMenu(false); mobileNav.style.maxHeight = ''; } });
+window.addEventListener('resize', () => { if (window.innerWidth >= 1280) { setMenu(false); mobileNav.style.maxHeight = ''; } });
 
-// ---------- Pilih program dari kartu -> isi form ----------
-const paketSelect = document.getElementById('f-paket');
-const PAKET_MAP = { A: 0, B: 1, C: 2 };
-document.querySelectorAll('.pick-btn').forEach(btn => {
-  btn.addEventListener('click', () => { paketSelect.selectedIndex = PAKET_MAP[btn.dataset.pick]; });
+// ---------- Dropdown Program ----------
+const programMenu = document.getElementById('program-menu');
+const programBtn = document.getElementById('program-btn');
+programBtn.addEventListener('click', e => {
+  e.stopPropagation();
+  const open = !programMenu.classList.contains('is-open');
+  programMenu.classList.toggle('is-open', open);
+  programBtn.setAttribute('aria-expanded', open);
+});
+document.addEventListener('click', e => {
+  if (!programMenu.contains(e.target)) { programMenu.classList.remove('is-open'); programBtn.setAttribute('aria-expanded', 'false'); }
+});
+const mprogramBtn = document.getElementById('mprogram-btn');
+const mprogramSub = document.getElementById('mprogram-sub');
+const mprogramChevron = document.getElementById('mprogram-chevron');
+mprogramBtn.addEventListener('click', () => {
+  const open = !mprogramSub.classList.contains('is-open');
+  mprogramSub.classList.toggle('is-open', open);
+  mprogramBtn.setAttribute('aria-expanded', open);
+  mprogramChevron.style.transform = open ? 'rotate(180deg)' : '';
+  if (mobileNav.style.maxHeight && mobileNav.style.maxHeight !== '0px') mobileNav.style.maxHeight = mobileNav.scrollHeight + 'px';
 });
 
-// ---------- Pilih cabang ----------
-let cabang = 'kandang';
-document.querySelectorAll('.cabang-btn').forEach(b => {
-  b.addEventListener('click', () => {
-    cabang = b.dataset.val;
-    document.querySelectorAll('.cabang-btn').forEach(x => {
-      x.classList.toggle('opt-on', x === b);
-      x.classList.toggle('border-slate-300', x !== b);
+// ---------- Modal fitur ----------
+const modalEl = document.getElementById('modal');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
+let lastFocus = null;
+function openModal(title, html) {
+  lastFocus = document.activeElement;
+  modalTitle.textContent = title;
+  modalBody.innerHTML = html;
+  modalBody.scrollTop = 0;
+  modalEl.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  modalEl.querySelector('[data-close]').focus();
+}
+function closeModal() {
+  modalEl.classList.remove('is-open');
+  document.body.style.overflow = '';
+  if (lastFocus) lastFocus.focus();
+}
+modalEl.addEventListener('click', e => { if (e.target === modalEl || e.target.closest('[data-close]')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && modalEl.classList.contains('is-open')) closeModal(); });
+
+function tanyaHTML(cabang = 'kandang') {
+  return `
+  <p class="text-sm text-muted">Pilih topik atau tulis pertanyaan Anda. Pesan akan dikirim ke WhatsApp cabang yang Anda pilih.</p>
+  <div class="mt-4 flex flex-wrap gap-2">
+    ${Object.keys(CHIP_MSG).map(t => `<button type="button" data-chip="${t}" class="text-sm font-semibold px-4 py-2 rounded-full border border-cyan/40 text-navy hover:bg-cyan hover:text-white transition">${t}</button>`).join('')}
+  </div>
+  <div class="mt-6 space-y-4">
+    <input id="t-nama" type="text" placeholder="Nama Anda" class="${INP}">
+    <select id="t-cabang" class="${INP}">
+      <option value="kandang" ${cabang === 'kandang' ? 'selected' : ''}>Cabang Kandangsemangkon (Pusat)</option>
+      <option value="kranji" ${cabang === 'kranji' ? 'selected' : ''}>Cabang Kranji</option>
+    </select>
+    <textarea id="t-pesan" rows="4" placeholder="Tulis pertanyaan Anda..." class="${INP}"></textarea>
+    <button type="button" id="t-kirim" class="w-full bg-green-500 text-white font-bold py-3.5 rounded-full hover:bg-green-600 transition">Kirim lewat WhatsApp</button>
+  </div>`;
+}
+function lokasiHTML() {
+  return `<div class="grid gap-5">` + Object.entries(BRANCHES).map(([k, b]) => `
+    <div class="rounded-2xl border border-slate-200 overflow-hidden">
+      <img src="${b.img}" alt="Gedung cabang ${b.nama}" class="w-full h-44 object-cover">
+      <div class="p-5">
+        <h4 class="font-extrabold text-navy text-lg">Cabang ${b.nama}</h4>
+        <p class="mt-2 text-sm text-muted">${b.alamat}</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a href="${waUrl(b.wa, 'Saya mau info cabang ' + b.nama)}" target="_blank" rel="noopener" class="bg-green-500 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-green-600">WA ${b.waTxt}</a>
+          <a href="${mapsUrl(b.map)}" target="_blank" rel="noopener" class="border border-navy/20 text-navy text-sm font-semibold px-4 py-2 rounded-full hover:border-cyan hover:text-cyan">Buka di Google Maps</a>
+          <button type="button" data-tanya-cabang="${k}" class="bg-orange text-white text-sm font-bold px-4 py-2 rounded-full hover:brightness-110">Tanya cabang ini</button>
+        </div>
+      </div>
+    </div>`).join('') + `</div>`;
+}
+function penawaranHTML() {
+  const items = [
+    'Biaya awal mulai Rp100.000 untuk setiap program',
+    'Placement test gratis untuk mengetahui level sebelum mendaftar',
+    'Kelas dipilihkan sesuai kemampuan siswa',
+    'Maksimal 12 siswa per kelas dengan ruangan ber-AC',
+    'Konsultasi Company Training dan School Partnership'
+  ];
+  return `
+  <ul class="space-y-3">${items.map(t => `<li class="flex gap-3 items-start rounded-xl bg-[#E8F8FC] p-4"><span class="text-cyan font-extrabold">✓</span><span class="text-sm text-navy">${t}</span></li>`).join('')}</ul>
+  <div class="mt-6 grid gap-3 sm:grid-cols-2">
+    <a href="${waUrl(WA_NUM, 'Halo Fun English, saya tertarik dengan penawaran menarik. Mohon info lebih lanjut.')}" target="_blank" rel="noopener" class="text-center bg-orange text-white font-extrabold py-3.5 rounded-full hover:brightness-110">Ambil Penawaran via WhatsApp</a>
+    <a href="promo.html" class="text-center bg-navy text-white font-bold py-3.5 rounded-full hover:bg-[#243a64]">Ikut Placement Test Gratis</a>
+  </div>
+  <p class="mt-5 text-xs text-muted">Rincian biaya lengkap per program ditanyakan langsung ke admin cabang.</p>`;
+}
+
+modalBody.addEventListener('click', e => {
+  const t = e.target;
+  const chip = t.closest('[data-chip]');
+  if (chip) { document.getElementById('t-pesan').value = CHIP_MSG[chip.dataset.chip]; return; }
+  if (t.closest('#t-kirim')) {
+    const nama = document.getElementById('t-nama').value.trim();
+    const pesan = document.getElementById('t-pesan').value.trim();
+    const kode = document.getElementById('t-cabang').value;
+    if (!nama || !pesan) { alert('Mohon isi nama dan pertanyaan Anda.'); return; }
+    window.open(waUrl(BRANCHES[kode].wa, `Halo Fun English, saya ${nama}.\n${pesan}`), '_blank', 'noopener');
+    return;
+  }
+  const tc = t.closest('[data-tanya-cabang]');
+  if (tc) openModal('Tanya Kami', tanyaHTML(tc.dataset.tanyaCabang));
+});
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-open]');
+  if (!t) return;
+  e.preventDefault();
+  setMenu(false);
+  programMenu.classList.remove('is-open');
+  programBtn.setAttribute('aria-expanded', 'false');
+  const kind = t.dataset.open;
+  if (kind === 'tanya') openModal('Tanya Kami', tanyaHTML());
+  else if (kind === 'lokasi') openModal('Lokasi Tersedia', lokasiHTML());
+  else if (kind === 'penawaran') openModal('Penawaran Menarik', penawaranHTML());
+});
+
+// ---------- Animasi muncul saat di-scroll ----------
+const revealIO = new IntersectionObserver(entries => entries.forEach(en => {
+  if (en.isIntersecting) { en.target.classList.add('in'); revealIO.unobserve(en.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+// ---------- Hitung angka statistik ----------
+(() => {
+  const section = document.querySelector('.stats-section');
+  if (!section) return;
+  const numbers = document.querySelectorAll('.stat-number');
+  const fills = document.querySelectorAll('.progress-fill');
+  let done = false;
+  const run = () => {
+    numbers.forEach(num => {
+      const target = +num.getAttribute('data-target');
+      const inc = target / 100; let cur = 0;
+      const timer = setInterval(() => { cur += inc; if (cur >= target) { num.innerText = target; clearInterval(timer); } else { num.innerText = Math.ceil(cur); } }, 20);
     });
-  });
-});
+    fills.forEach(f => f.style.width = f.getAttribute('data-progress'));
+  };
+  new IntersectionObserver((en, obs) => { if (en[0].isIntersecting && !done) { done = true; run(); obs.disconnect(); } }, { threshold: 0.4 }).observe(section);
+})();
 
-// ---------- Kirim pendaftaran ke WhatsApp ----------
+// ---------- Form pendaftaran (Beranda) ----------
+const paketSelect = document.getElementById('f-paket');
+const pIdx = PROGRAM_KEYS.indexOf(new URLSearchParams(location.search).get('paket'));
+if (pIdx >= 0) paketSelect.selectedIndex = pIdx;
+let cabang = 'kandang';
+document.querySelectorAll('.cabang-btn').forEach(b => b.addEventListener('click', () => {
+  cabang = b.dataset.val;
+  document.querySelectorAll('.cabang-btn').forEach(x => { x.classList.toggle('opt-on', x === b); x.classList.toggle('border-slate-300', x !== b); });
+}));
 const CABANG_WA = { kandang: '6285700980098', kranji: '6285607152724' };
 const CABANG_NAMA = { kandang: 'Kandangsemangkon', kranji: 'Kranji' };
 document.getElementById('f-submit').addEventListener('click', () => {
@@ -626,8 +638,7 @@ document.getElementById('f-submit').addEventListener('click', () => {
   const usia = document.getElementById('f-usia').value.trim();
   const hp = document.getElementById('f-hp').value.trim();
   if (!nama || !usia || !hp) { alert('Mohon lengkapi nama, usia/jenjang, dan nomor WhatsApp.'); return; }
-  const pesan =
-`Halo Fun English, saya ingin mendaftar:
+  const pesan = `Halo Fun English, saya ingin mendaftar:
 - Program: ${paketSelect.value}
 - Cabang: ${CABANG_NAMA[cabang]}
 - Nama siswa: ${nama}
@@ -637,79 +648,6 @@ document.getElementById('f-submit').addEventListener('click', () => {
   window.open(`https://wa.me/${CABANG_WA[cabang]}?text=${encodeURIComponent(pesan)}`, '_blank');
 });
 
-// ---------- Placement test ----------
-const QUESTIONS = [
-  { q: 'Pilih kalimat yang benar:', o: ['I is a student.', 'I am a student.', 'I be student.'], a: 1 },
-  { q: 'Apa arti kata "beautiful"?', o: ['Jelek', 'Cantik', 'Besar'], a: 1 },
-  { q: 'Lengkapi kalimat: "She ___ to school every day."', o: ['go', 'goes', 'going'], a: 1 },
-  { q: 'Pilih kalimat lampau yang benar:', o: ['Yesterday I go to the market.', 'Yesterday I went to the market.', 'Yesterday I gone to the market.'], a: 1 },
-  { q: 'Respons yang tepat untuk "How have you been?"', o: ['Yes, I have.', 'I have been good, thank you.', 'Good night.'], a: 1 }
-];
-const LEVELS = [
-  { max: 1, name: 'Level Dasar (Beginner)', desc: 'Disarankan mulai dari Fun Kids English untuk membangun dasar kosakata dan kalimat.' },
-  { max: 3, name: 'Level Menengah (Elementary – Pre-Intermediate)', desc: 'Disarankan Teen & Academic English untuk memperkuat grammar dan percakapan.' },
-  { max: 5, name: 'Level Lanjut (Intermediate+)', desc: 'Disarankan General & Professional untuk kebutuhan kerja, wawancara, dan kefasihan berbicara.' }
-];
-let qi = 0, score = 0;
-function renderQ() {
-  const item = QUESTIONS[qi];
-  document.getElementById('q-progress').textContent = `Pertanyaan ${qi + 1} dari ${QUESTIONS.length}`;
-  document.getElementById('q-text').textContent = item.q;
-  const wrap = document.getElementById('q-options');
-  wrap.innerHTML = '';
-  item.o.forEach((opt, idx) => {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'w-full text-left bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm hover:border-cyan hover:bg-cyan/5 transition';
-    btn.textContent = opt;
-    btn.addEventListener('click', () => { if (idx === item.a) score++; qi++; qi < QUESTIONS.length ? renderQ() : showResult(); });
-    wrap.appendChild(btn);
-  });
-}
-function showResult() {
-  document.getElementById('q-options').innerHTML = '';
-  document.getElementById('q-text').textContent = 'Tes selesai! Berikut perkiraan level Anda.';
-  document.getElementById('q-progress').textContent = `Skor: ${score} / ${QUESTIONS.length}`;
-  const lvl = LEVELS.find(l => score <= l.max) || LEVELS[LEVELS.length - 1];
-  document.getElementById('r-level').textContent = lvl.name;
-  document.getElementById('r-desc').textContent = lvl.desc + ' Hasil ini hanya perkiraan awal; admin kami akan memastikan level saat konsultasi.';
-  document.getElementById('r-wa').href = `https://wa.me/628563127720?text=${encodeURIComponent('Halo, saya sudah tes placement. Skor: ' + score + '/5, level: ' + lvl.name)}`;
-  document.getElementById('q-result').classList.remove('hidden');
-}
-document.getElementById('r-restart').addEventListener('click', () => {
-  qi = 0; score = 0; document.getElementById('q-result').classList.add('hidden'); renderQ();
-});
-renderQ();
-
-// ---------- Statistik siswa: counter + progress bar saat di-scroll ----------
-document.addEventListener('DOMContentLoaded', () => {
-  const statsSection = document.querySelector('.stats-section');
-  const numbers = document.querySelectorAll('.stat-number');
-  const progressFills = document.querySelectorAll('.progress-fill');
-  let animated = false;
-
-  const startAnimation = () => {
-    numbers.forEach((num) => {
-      const target = +num.getAttribute('data-target');
-      const duration = 2000;
-      const stepTime = 20;
-      const steps = duration / stepTime;
-      const increment = target / steps;
-      let current = 0;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) { num.innerText = target; clearInterval(timer); }
-        else { num.innerText = Math.ceil(current); }
-      }, stepTime);
-    });
-    progressFills.forEach((fill) => { fill.style.width = fill.getAttribute('data-progress'); });
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !animated) { startAnimation(); animated = true; }
-  }, { threshold: 0.5 });
-  observer.observe(statsSection);
-});
 </script>
 </body>
 </html>
