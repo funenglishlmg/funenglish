@@ -80,7 +80,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
 <header id="site-header" class="sticky top-0 z-50 glass border-b border-white/60 transition-shadow duration-300">
   <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between gap-4">
     <a href="index.html" class="flex items-center shrink-0" aria-label="Fun English - Beranda">
-      <img src="assets/logo-badge.jpg" alt="Logo Fun English English Training Centre" class="h-12 w-auto object-contain">
+      <img src="assets/logo-fun-english.jpg" alt="Logo Fun English" class="h-12 w-auto object-contain">
     </a>
 
     <nav class="hidden xl:flex items-center gap-6 text-[15px] font-semibold text-navy/80" aria-label="Menu utama">
@@ -220,7 +220,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
 <footer class="bg-navy text-slate-300 text-sm pt-16 pb-6">
   <div class="max-w-6xl mx-auto px-4 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
     <div>
-      <div class="bg-white rounded-xl p-2 inline-block"><img src="assets/logo-badge.jpg" alt="Logo Fun English English Training Centre" class="h-16 w-auto object-contain"></div>
+      <div class="bg-white rounded-xl p-2 inline-block"><img src="assets/logo-fun-english.jpg" alt="Logo Fun English" class="h-16 w-auto object-contain"></div>
       <p class="mt-4 leading-relaxed">Tempat kursus bahasa Inggris untuk TK, SD, SMP, SMA &amp; Umum di Lamongan. Belajar dengan cara yang seru.</p>
     </div>
     <div>
@@ -284,8 +284,8 @@ details[open] .faq-icon{transform:rotate(45deg)}
 const WA_NUM = '628563127720';
 const INP = 'w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-cyan';
 const BRANCHES = {
-  kandang: { nama: 'Kandangsemangkon', alamat: "Perum De' Paciran Residence Blok D-9 (depan balai desa Kandangsemangkon), Kec. Paciran, Kab. Lamongan 62263", wa: '6285700980098', waTxt: '0857-0098-0098', map: "Perum De' Paciran Residence Blok D-9 Kandangsemangkon Paciran Lamongan", img: 'assets/cabang-kandang.jpg' },
-  kranji: { nama: 'Kranji', alamat: 'Gang Masjid Kranji masuk ke selatan (depan SMK Muhammadiyah 9), Kab. Lamongan', wa: '6285607152724', waTxt: '0856-0715-2724', map: 'SMK Muhammadiyah 9 Kranji Paciran Lamongan', img: 'assets/cabang-kranji.jpg' }
+  kandang: { nama: 'Kandangsemangkon', alamat: "Perum De' Paciran Residence Blok D-9 (depan balai desa Kandangsemangkon), Kec. Paciran, Kab. Lamongan 62263", wa: '6285700980098', waTxt: '0857-0098-0098', map: "Perum De' Paciran Residence Blok D-9 Kandangsemangkon Paciran Lamongan", gmaps: 'https://maps.app.goo.gl/wz5Kx4wMfgG1AGFq6', img: 'assets/cabang-kandang.jpg' },
+  kranji: { nama: 'Kranji', alamat: 'Gang Masjid Kranji masuk ke selatan (depan SMK Muhammadiyah 9), Kab. Lamongan', wa: '6285607152724', waTxt: '0856-0715-2724', map: 'SMK Muhammadiyah 9 Kranji Paciran Lamongan', gmaps: 'https://maps.app.goo.gl/DgWMcuoekNPUDXuh6', img: 'assets/cabang-kranji.jpg' }
 };
 const PROGRAM_KEYS = ['kids', 'teen', 'general'];
 const CHIP_MSG = {
@@ -389,7 +389,7 @@ function lokasiHTML() {
         <p class="mt-2 text-sm text-muted">${b.alamat}</p>
         <div class="mt-4 flex flex-wrap gap-2">
           <a href="${waUrl(b.wa, 'Saya mau info cabang ' + b.nama)}" target="_blank" rel="noopener" class="bg-green-500 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-green-600">WA ${b.waTxt}</a>
-          <a href="${mapsUrl(b.map)}" target="_blank" rel="noopener" class="border border-navy/20 text-navy text-sm font-semibold px-4 py-2 rounded-full hover:border-cyan hover:text-cyan">Buka di Google Maps</a>
+          <a href="${b.gmaps}" target="_blank" rel="noopener" class="border border-navy/20 text-navy text-sm font-semibold px-4 py-2 rounded-full hover:border-cyan hover:text-cyan">Buka di Google Maps</a>
           <button type="button" data-tanya-cabang="${k}" class="bg-orange text-white text-sm font-bold px-4 py-2 rounded-full hover:brightness-110">Tanya cabang ini</button>
         </div>
       </div>
