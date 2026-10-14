@@ -3,7 +3,7 @@
 Folder siap deploy (HTML statis + Tailwind CDN, tanpa backend).
 
 ## Isi folder
-- index.html : Beranda (hero, keunggulan, 1 video suasana belajar, statistik, FAQ, form pendaftaran, lokasi cabang)
+- index.html : Beranda (hero, keunggulan, video suasana belajar, statistik, FAQ, form pendaftaran, lokasi cabang, Yuk Gabung Fun English, Tim Pengajar)
 - tentang-kami.html : Tentang Kami (profil lembaga, mengapa kami, profil pengajar, suasana belajar, semua video kegiatan)
 - program-kids.html : Fun Kids English (TK & SD)
 - program-teen.html : Teen & Academic English (SMP & SMA)
