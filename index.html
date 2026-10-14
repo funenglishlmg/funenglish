@@ -91,7 +91,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
       </span>
     </a>
 
-    <nav class="hidden xl:flex items-center gap-6 text-[15px] font-semibold text-navy/80" aria-label="Menu utama">
+    <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-[14px] xl:text-[15px] font-semibold text-navy/80" aria-label="Menu utama">
       <a href="index.html" class="nav-link hover:text-cyan transition is-active">Beranda</a>
       <div class="relative" id="program-menu">
         <button type="button" id="program-btn" aria-expanded="false" aria-controls="program-dropdown" class="nav-link hover:text-cyan transition inline-flex items-center gap-1">Program
@@ -115,7 +115,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
     <div class="flex items-center gap-3">
       <button type="button" data-open="tanya" class="hidden sm:inline-flex items-center whitespace-nowrap bg-orange text-white font-extrabold text-sm tracking-wide px-6 py-3 rounded-full shadow-glow hover:brightness-110 hover:-translate-y-0.5 transition">TANYA KAMI</button>
       <button id="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-nav"
-        class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl border border-slate-200 bg-white">
+        class="lg:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl border border-slate-200 bg-white">
         <span class="block w-5 h-0.5 bg-navy rounded transition-transform duration-300"></span>
         <span class="block w-5 h-0.5 bg-navy rounded transition-opacity duration-300"></span>
         <span class="block w-5 h-0.5 bg-navy rounded transition-transform duration-300"></span>
@@ -123,7 +123,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
     </div>
   </div>
 
-  <nav id="mobile-nav" class="xl:hidden overflow-hidden max-h-0 transition-all duration-300 ease-out bg-white border-t border-slate-100 shadow-md" aria-label="Menu mobile">
+  <nav id="mobile-nav" class="lg:hidden overflow-hidden max-h-0 transition-all duration-300 ease-out bg-white border-t border-slate-100 shadow-md" aria-label="Menu mobile">
     <div class="flex flex-col px-4 py-2 text-[15px] font-semibold text-navy">
       <a href="index.html" class="mnav py-3 border-b border-slate-100">Beranda</a>
       <button type="button" id="mprogram-btn" aria-expanded="false" class="py-3 border-b border-slate-100 flex items-center justify-between text-left">Program
@@ -517,7 +517,7 @@ function setMenu(open) {
 }
 menuBtn.addEventListener('click', () => setMenu(mobileNav.style.maxHeight === '0px' || !mobileNav.style.maxHeight));
 document.querySelectorAll('.mnav').forEach(a => a.addEventListener('click', () => setMenu(false)));
-window.addEventListener('resize', () => { if (window.innerWidth >= 1280) { setMenu(false); mobileNav.style.maxHeight = ''; } });
+window.addEventListener('resize', () => { if (window.innerWidth >= 1024) { setMenu(false); mobileNav.style.maxHeight = ''; } });
 
 // ---------- Dropdown Program ----------
 const programMenu = document.getElementById('program-menu');
