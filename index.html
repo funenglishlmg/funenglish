@@ -49,6 +49,9 @@ details[open] .faq-icon{transform:rotate(45deg)}
 .modal-overlay{display:none}.modal-overlay.is-open{display:flex}
 .team-img{transition:transform .6s ease}.team-card:hover .team-img{transform:scale(1.06)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
+.team-scroll{scrollbar-width:none;-webkit-overflow-scrolling:touch}.team-scroll::-webkit-scrollbar{display:none}
+@media (max-width:639px){.js .team-scroll .reveal{opacity:1;transform:none}}
+.team-dots span{width:8px;height:8px;border-radius:9999px;background:#cbd5e1;transition:all .25s}.team-dots span.on{background:#FF6B2C;width:22px}
 </style>
 </head>
 <body class="bg-white text-navy font-sans antialiased">
@@ -424,26 +427,27 @@ details[open] .faq-icon{transform:rotate(45deg)}
       <p class="text-cyan font-extrabold text-sm tracking-widest uppercase">Tim Pengajar</p>
       <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-navy">Dibimbing oleh Pengajar yang Ramah &amp; Sabar</h2>
     </div>
-    <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-5"><div class="reveal d0 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
+    <div class="mt-14"><div class="team-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-5 sm:gap-7 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0"><div class="shrink-0 w-[72%] snap-center sm:w-auto reveal d0 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
   <div class="overflow-hidden h-72"><img src="assets/pengajar-etik.jpg" alt="Ms. Etik, pengajar Fun English" loading="lazy" class="team-img w-full h-full object-cover object-top"></div>
   <div class="p-6 text-center"><p class="font-extrabold text-navy text-lg">Ms. Etik</p><p class="text-sm font-semibold text-cyan mt-1">Kids Expert</p></div>
 </div>
-<div class="reveal d1 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
+<div class="shrink-0 w-[72%] snap-center sm:w-auto reveal d1 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
   <div class="overflow-hidden h-72"><img src="assets/pengajar-hesti.jpg" alt="Ms. Hesti, pengajar Fun English" loading="lazy" class="team-img w-full h-full object-cover object-top"></div>
   <div class="p-6 text-center"><p class="font-extrabold text-navy text-lg">Ms. Hesti</p><p class="text-sm font-semibold text-cyan mt-1">Conversational Coach</p></div>
 </div>
-<div class="reveal d2 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
+<div class="shrink-0 w-[72%] snap-center sm:w-auto reveal d2 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
   <div class="overflow-hidden h-72"><img src="assets/pengajar-nely.jpg" alt="Ms. Nely, pengajar Fun English" loading="lazy" class="team-img w-full h-full object-cover object-top"></div>
   <div class="p-6 text-center"><p class="font-extrabold text-navy text-lg">Ms. Nely</p><p class="text-sm font-semibold text-cyan mt-1">Grammar Master</p></div>
 </div>
-<div class="reveal d0 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
+<div class="shrink-0 w-[72%] snap-center sm:w-auto reveal d0 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
   <div class="overflow-hidden h-72"><img src="assets/pengajar-vika.jpg" alt="Ms. Vika, pengajar Fun English" loading="lazy" class="team-img w-full h-full object-cover object-top"></div>
   <div class="p-6 text-center"><p class="font-extrabold text-navy text-lg">Ms. Vika</p><p class="text-sm font-semibold text-cyan mt-1">Pengajar Fun English</p></div>
 </div>
-<div class="reveal d1 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
+<div class="shrink-0 w-[72%] snap-center sm:w-auto reveal d1 team-card card-lift bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden">
   <div class="overflow-hidden h-72"><img src="assets/pengajar-fain.jpg" alt="Mr. Fain, pengajar Fun English" loading="lazy" class="team-img w-full h-full object-cover object-top"></div>
   <div class="p-6 text-center"><p class="font-extrabold text-navy text-lg">Mr. Fain</p><p class="text-sm font-semibold text-cyan mt-1">Pengajar Fun English</p></div>
 </div>
+<div class="team-dots sm:hidden flex justify-center items-center gap-2 mt-4"></div></div>
 </div>
   </div>
 </section>
@@ -741,6 +745,15 @@ document.getElementById('f-submit').addEventListener('click', () => {
   window.open(`https://wa.me/${CABANG_WA[cabang]}?text=${encodeURIComponent(pesan)}`, '_blank');
 });
 
+</script>
+<script>
+(function(){document.querySelectorAll('.team-scroll').forEach(function(sc){
+var cards=sc.querySelectorAll('.team-card'),dots=sc.parentNode.querySelector('.team-dots');
+if(!dots)return;cards.forEach(function(){dots.appendChild(document.createElement('span'))});
+var ds=dots.children;function upd(){var c=sc.scrollLeft+sc.clientWidth/2,b=0,bd=1e9;
+cards.forEach(function(el,i){var d=Math.abs(el.offsetLeft+el.offsetWidth/2-c);if(d<bd){bd=d;b=i}});
+for(var i=0;i<ds.length;i++)ds[i].className=i===b?'on':''}
+sc.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});upd()})})();
 </script>
 </body>
 </html>
