@@ -351,10 +351,22 @@ details[open] .faq-icon{transform:rotate(45deg)}
           <p class="text-sm font-semibold text-navy mb-2">3. Data calon siswa</p>
           <input id="f-nama" type="text" placeholder="Nama lengkap siswa" class="w-full rounded-xl border-slate-300 px-4 py-3 text-sm mb-3">
           <input id="f-usia" type="text" placeholder="Usia / jenjang (contoh: 9 tahun, SD kelas 3)" class="w-full rounded-xl border-slate-300 px-4 py-3 text-sm mb-3">
+          <input id="f-alamat" type="text" placeholder="Alamat lengkap" class="w-full rounded-xl border-slate-300 px-4 py-3 text-sm mb-3">
+          <input id="f-sekolah" type="text" placeholder="Asal sekolah" class="w-full rounded-xl border-slate-300 px-4 py-3 text-sm mb-3">
           <input id="f-hp" type="tel" placeholder="Nomor WhatsApp orang tua / peserta" class="w-full rounded-xl border-slate-300 px-4 py-3 text-sm">
         </div>
         <div>
-          <p class="text-sm font-semibold text-navy mb-2">4. Metode pembayaran</p>
+          <p class="text-sm font-semibold text-navy mb-2">4. Darimana Anda mendapat informasi tentang Fun English?</p>
+          <select id="f-info" class="w-full rounded-xl border-slate-300 px-4 py-3 text-sm">
+            <option value="">Pilih salah satu</option>
+            <option>Banner</option>
+            <option>Brochure</option>
+            <option>Sosmed</option>
+            <option>Keluarga</option>
+          </select>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-navy mb-2">5. Metode pembayaran</p>
           <select id="f-bayar" class="w-full rounded-xl border-slate-300 px-4 py-3 text-sm">
             <option>Transfer Bank</option>
             <option>QRIS</option>
@@ -735,13 +747,19 @@ document.getElementById('f-submit').addEventListener('click', () => {
   const nama = document.getElementById('f-nama').value.trim();
   const usia = document.getElementById('f-usia').value.trim();
   const hp = document.getElementById('f-hp').value.trim();
-  if (!nama || !usia || !hp) { alert('Mohon lengkapi nama, usia/jenjang, dan nomor WhatsApp.'); return; }
+  const alamat = document.getElementById('f-alamat').value.trim();
+  const sekolah = document.getElementById('f-sekolah').value.trim();
+  const info = document.getElementById('f-info').value;
+  if (!nama || !usia || !alamat || !sekolah || !hp || !info) { alert('Mohon lengkapi nama, usia/jenjang, alamat, sekolah, nomor WhatsApp, dan sumber informasi.'); return; }
   const pesan = `Halo Fun English, saya ingin mendaftar:
 - Program: ${paketSelect.value}
 - Cabang: ${CABANG_NAMA[cabang]}
 - Nama siswa: ${nama}
 - Usia/jenjang: ${usia}
+- Alamat: ${alamat}
+- Sekolah: ${sekolah}
 - No. WA: ${hp}
+- Info Fun English dari: ${info}
 - Pembayaran: ${document.getElementById('f-bayar').value}`;
   window.open(`https://wa.me/${CABANG_WA[cabang]}?text=${encodeURIComponent(pesan)}`, '_blank');
 });
